@@ -1,0 +1,21 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+.like {
+  @include flex();
+
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+
+  width: 55px;
+  height: 55px;
+
+  font-size: 18px;
+  color: white;
+  background-color: $first-color-alt;
+
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+}

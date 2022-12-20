@@ -1,0 +1,109 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+.app__bar {
+  padding: 1rem;
+  background-color: $first-color;
+  color: $title-color;
+
+  .app__group {
+    @include flex(row, space-between, 0.5rem);
+    color: $title-color;
+
+    .heading__bar {
+      font-family: $subtitle-font;
+      font-size: 2rem;
+      font-weight: $font-semi-bold;
+    }
+    .logo__bar {
+      width: 34px;
+    }
+  }
+
+  .navbar {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    width: 85%;
+    margin: 0 auto;
+    background-color: $first-color-alt;
+    border-radius: 0.6rem;
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+    z-index: $z-tooltip;
+
+    ul {
+      @include flex(column, center, 0rem);
+
+      li {
+        margin: 1.5rem 0;
+        text-align: center;
+
+        a {
+          display: block;
+          width: 100px;
+          height: 44px;
+          line-height: 44px;
+          text-decoration: none;
+          color: $title-color;
+        }
+      }
+    }
+  }
+
+  nav.invisible {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  #menu-navbar {
+    visibility: visible;
+    background-color: transparent;
+    color: $title-color;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 2.2em;
+    cursor: pointer;
+
+    &:focus {
+      outline: 1px solid $title-color;
+    }
+  }
+}
+
+.flex-container {
+  @include flex(row, space-between, 0.5rem);
+}
+
+@media (min-width: 968px) {
+  #menu-navbar {
+    display: none;
+    opacity: 0;
+  }
+
+  .navbar__info {
+    ul {
+      @include flex(row, space-between, 1.5em);
+
+      li a {
+        padding: 1em 0.5em;
+        text-decoration: none;
+        color: $title-color;
+      }
+    }
+  }
+  .navbar {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 968px) {
+  .navbar__info {
+    display: none;
+    opacity: 0;
+  }
+}

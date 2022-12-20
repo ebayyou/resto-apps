@@ -1,0 +1,25 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+.button {
+  @include flex(row, center, 0.5rem);
+  width: 150px;
+  height: 44px;
+  font-family: $subtitle-font;
+  background-color: $title-color;
+  font-size: $h3-font-size;
+  border-radius: 0.5rem;
+
+  &:hover .icon__button {
+    transform: translateX(4px);
+  }
+
+  &:focus {
+    border: 2px solid $title-color;
+  }
+
+  .icon__button {
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,157 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+.detail__wrapper {
+  position: relative;
+  width: 95%;
+  min-height: 680px;
+  margin: 50px auto;
+
+  .detail__left {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .detail__img {
+    max-width: 100%;
+    margin: 1em auto;
+    border-radius: 0.5rem;
+  }
+
+  .detail__title {
+    margin-bottom: 0.5em;
+    font-size: $h1-font-size;
+    font-weight: $font-semi-bold;
+    font-family: $title-font;
+  }
+
+  .detail__desc {
+    margin-bottom: 1em;
+    font-size: $h3-font-size;
+    font-family: $title-font;
+  }
+
+  .detail__group {
+    @include flex(row, space-between, 0);
+    margin: 1.2em 0;
+
+    .detail__text {
+      font-family: $subtitle-font;
+      font-size: $h3-font-size;
+    }
+  }
+
+  h4 {
+    margin-bottom: 0.2em;
+    font-size: $h2-font-size;
+    font-family: $title-font;
+    text-align: center;
+  }
+
+  .detail__address {
+    @include flex();
+    margin-bottom: 1em;
+    font-family: $subtitle-font;
+  }
+
+  .detail__menu {
+    width: 90%;
+    margin: 2em auto;
+
+    .menu__item {
+      .menu__head {
+        margin: 1em 0 0.2em;
+        padding: 0.6em;
+        font-size: $h3-font-size;
+        font-weight: $font-semi-bold;
+        font-family: $title-font;
+        text-align: center;
+        background-color: $first-color-alt;
+        color: #fff;
+        border-radius: 0.4rem;
+      }
+
+      .menu__table {
+        width: 100%;
+
+        td {
+          background-color: $subtitle-color;
+          color: $title-color;
+          padding: 1em;
+        }
+      }
+    }
+  }
+
+  .detail__review {
+    margin-top: 2em;
+    max-height: 550px;
+    overflow-y: scroll;
+
+    .review {
+      margin: 1.2rem 0;
+      padding: 0.8em;
+      font-family: $title-font;
+      background-color: $first-color;
+      color: $title-color;
+
+      h5,
+      p {
+        margin-bottom: 0.6em;
+      }
+
+      .review__name {
+        font-size: $h3-font-size;
+      }
+      .review__date {
+        padding: 0.3em;
+        text-align: center;
+        font-family: $body-font;
+        background-color: $first-color-alt;
+        border-radius: 0.3em;
+      }
+    }
+  }
+  .review__button {
+    @include flex();
+    width: 220px;
+    height: 55px;
+    margin: 1em auto 0;
+    font-size: $h2-font-size;
+    font-family: $subtitle-font;
+    border-radius: 0.6rem;
+
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+#text {
+  display: none;
+}
+
+@media (min-width: 680px) {
+  .detail__wrapper .detail__menu {
+    width: 550px;
+  }
+}
+
+@media (min-width: 1150px) {
+  .detail__wrapper {
+    @include flex(row, space-between, 0);
+    align-items: flex-start;
+
+    .detail__right {
+      width: 50%;
+    }
+
+    .detail__left {
+      width: 45%;
+    }
+
+    .detail__menu {
+      margin: 0;
+    }
+  }
+}

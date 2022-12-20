@@ -1,0 +1,34 @@
+$first-color: hsl(19deg 10% 8%);
+// $first-color: hsl(19, 64%, 54%);
+$first-color-alt: hsl(19, 64%, 52%);
+$title-color: hsl(0, 0%, 94%);
+$subtitle-color: hsl(19, 16%, 15%);
+$text-color: hsl(19, 16%, 35%);
+$text-color-light: hsl(19, 8%, 55%);
+$container-color: hsl(19, 16%, 15%);
+
+$body-font: 'Poppins', sans-serif;
+$title-font: 'Lora', serif;
+$subtitle-font: 'Dancing Script', cursive;
+$biggest-font-size: 2.25rem;
+$h1-font-size: 1.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1rem;
+$normal-font-size: 0.938rem;
+$small-font-size: 0.813rem;
+$smaller-font-size: 0.75rem;
+$font-medium: 500;
+$font-semi-bold: 600;
+
+$z-tooltip: 10;
+$z-fixed: 100;
+
+@media screen and (min-width: 1024px) {
+  $biggest-font-size: 4rem;
+  $h1-font-size: 2.25rem;
+  $h2-font-size: 1.5rem;
+  $h3-font-size: 1.25rem;
+  $normal-font-size: 1rem;
+  $small-font-size: 0.875rem;
+  $smaller-font-size: 0.813rem;
+}

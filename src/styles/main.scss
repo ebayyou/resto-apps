@@ -1,0 +1,132 @@
+@use './base/reset';
+@use './layouts/app-bar';
+@use './layouts/hero-element';
+@use './layouts/list-restaurant';
+@use './layouts/review-page';
+@use './layouts/footer';
+@use './components/button';
+@use './components/like-button';
+@use './components/detail-restaurant';
+@use './components/review-modal';
+@use './components/loading';
+@use './base/variables' as *;
+
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $body-font;
+  color: $subtitle-color;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 0.5rem;
+  margin: 3rem auto;
+}
+
+.head__section {
+  margin: 1em 0;
+  font-size: $h1-font-size;
+  font-weight: $font-semi-bold;
+  font-family: $title-font;
+  text-align: center;
+}
+.head__desc {
+  max-width: 250px;
+  margin: 0 auto 2em;
+  font-size: $h3-font-size;
+  font-family: $subtitle-font;
+  font-weight: $font-medium;
+  text-align: center;
+}
+
+.container {
+  max-width: 968px;
+  margin: 0 auto;
+}
+
+.star {
+  color: $first-color-alt;
+  span {
+    color: $first-color;
+  }
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  width: 80px;
+  text-align: center;
+  line-height: 50px;
+  background-color: $first-color-alt;
+  color: $title-color;
+  border-radius: 0.6rem;
+  transition: all 0.3s ease;
+
+  &:focus {
+    top: 10px;
+  }
+}
+
+// custom shape : https://www.shapedivider.app/
+.custom-shape-divider-bottom-1669143562 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1669143562 svg {
+  position: relative;
+  display: block;
+  width: calc(187% + 1.3px);
+  height: 178px;
+}
+.custom-shape-divider-bottom-1669143562 .shape-fill {
+  fill: #ffffff;
+}
+
+.custom-shape-divider-top-1669143876 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.custom-shape-divider-top-1669143876 svg {
+  position: relative;
+  display: block;
+  width: calc(187% + 1.3px);
+  height: 181px;
+}
+
+.custom-shape-divider-top-1669143876 .shape-fill {
+  fill: #272424;
+}
+
+@media (min-width: 650px) {
+  .skip-to-content {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1250px;
+  }
+}

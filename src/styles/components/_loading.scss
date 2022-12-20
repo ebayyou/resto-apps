@@ -1,0 +1,105 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+.loading {
+  @include flex();
+  height: 600px;
+
+  .loading__text {
+    font-size: 1.6rem;
+    color: rgb(35 35 35);
+    font-size: $subtitle-font;
+  }
+  .loading__text span:nth-child(1) {
+    color: #af7397;
+  }
+  .loading__text span:nth-child(2) {
+    color: #7badfd;
+  }
+  .loading__text span:nth-child(3) {
+    color: #6c65bf;
+  }
+
+  /* loader animation, source : https://codepen.io/object505/pen/LLOOOq */
+  .loading__loader {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transform: rotate(165deg);
+  }
+  .loading__loader:before,
+  .loading__loader:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%);
+  }
+  .loading__loader:before {
+    animation: before 2s infinite;
+  }
+  .loading__loader:after {
+    animation: after 2s infinite;
+  }
+
+  @keyframes before {
+    0% {
+      width: 0.5em;
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    35% {
+      width: 2.5em;
+      box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+    }
+    70% {
+      width: 0.5em;
+      box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    100% {
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+  }
+
+  @keyframes after {
+    0% {
+      height: 0.5em;
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+    35% {
+      height: 2.5em;
+      box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+    70% {
+      height: 0.5em;
+      box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+    100% {
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+  }
+}
+
+.invisible {
+  display: none;
+  opacity: 0;
+}
+
+@media (min-width: 780px) {
+  .loading__text {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 968px) {
+  .loading {
+    height: 800px;
+  }
+
+  .loading__text {
+    font-size: 3.8rem;
+  }
+}

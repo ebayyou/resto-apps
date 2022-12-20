@@ -1,0 +1,102 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+footer {
+  position: relative;
+  background-color: $title-color;
+  padding-bottom: 0.6em;
+
+  .foo__flex {
+    padding: 1.2em;
+
+    .foo__brand {
+      @include flex;
+
+      .logo__foo {
+        width: 80px;
+      }
+
+      .heading__foo {
+        font-size: $h1-font-size;
+        font-weight: $font-semi-bold;
+        font-family: $subtitle-font;
+      }
+    }
+
+    .foo__desc {
+      width: 80%;
+      margin: 1.5em auto;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .social__group {
+      @include flex(row, center, 0.5em);
+      margin: 1em 0;
+
+      li .social__icons {
+        @include flex(row, center, 0);
+        font-size: 1.5rem;
+        padding: 0.5em;
+        background-color: $container-color;
+        color: $title-color;
+        border-radius: 50%;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          color: $container-color;
+          background-color: $title-color;
+        }
+      }
+    }
+
+    .foo__listgroup {
+      @include flex(column, center, 0.2em);
+      text-align: center;
+
+      .foo__list:nth-child(1) {
+        font-weight: $font-semi-bold;
+        margin-bottom: 0.5em;
+      }
+
+      .foo__list a {
+        display: block;
+        width: 150px;
+        height: 44px;
+        line-height: 44px;
+        color: #8a8a8a;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .foo__line {
+    height: 5px;
+    margin: 1.5em 2em;
+    background-color: $container-color;
+  }
+  .foo__copy {
+    text-align: center;
+    font-family: $subtitle-font;
+    font-size: 1rem;
+    margin-top: 1em;
+  }
+}
+
+@media (min-width: 650px) {
+  .foo__desc {
+    width: 300px;
+  }
+}
+
+@media (min-width: 968px) {
+  .foo__flex {
+    @include flex(row, space-between, 1em);
+    align-items: flex-start;
+  }
+
+  footer .foo__copy {
+    font-size: 1.4rem;
+  }
+}

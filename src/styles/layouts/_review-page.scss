@@ -1,0 +1,97 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+.review__page {
+  @include flex(column, center, 2em);
+
+  .review__img {
+    width: 95%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 2rem;
+    border-top: 6px solid hsl(19deg, 10%, 8%);
+    border-bottom: 6px solid hsl(19deg, 10%, 8%);
+  }
+
+  .review__group {
+    padding: 0.8em;
+
+    .review__heading {
+      font-size: $h1-font-size;
+      font-weight: $font-semi-bold;
+      margin-bottom: 2rem;
+    }
+
+    .review__info {
+      @include flex(row, left, 0.5rem);
+      margin: 1.5rem 0;
+
+      .info__image {
+        width: 54px;
+        background-color: hsl(234deg 42% 33%);
+        padding: 0.2rem;
+        border-radius: 50%;
+      }
+
+      span {
+        p:nth-child(1) {
+          font-size: $normal-font-size;
+          font-weight: $font-semi-bold;
+        }
+        p:nth-child(2) {
+          font-size: $small-font-size;
+        }
+      }
+    }
+
+    .review__desc {
+      font-size: $normal-font-size;
+      font-weight: 400;
+      margin-bottom: 1em;
+    }
+
+    .arrow {
+      @include flex(row, right, 1em);
+
+      .arrow_icon {
+        @include flex();
+        width: 44px;
+        height: 44px;
+        font-size: $normal-font-size;
+        background-color: $title-color;
+        padding: 1.2rem;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .review__page {
+    width: 550px;
+  }
+}
+
+@media (min-width: 968px) {
+  .review__page {
+    @include flex(row, center, 2em);
+    width: 90%;
+  }
+
+  .review__img {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    border-top: 0px solid black;
+  }
+
+  .arrow_icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .review__page {
+    width: 968px;
+  }
+}
