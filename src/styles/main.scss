@@ -2,14 +2,15 @@
 @use './layouts/app-bar';
 @use './layouts/hero-element';
 @use './layouts/list-restaurant';
+@use './layouts/detail-restaurant';
 @use './layouts/review-page';
 @use './layouts/footer';
 @use './components/button';
 @use './components/like-button';
-@use './components/detail-restaurant';
 @use './components/review-modal';
 @use './components/loading';
 @use './base/variables' as *;
+@use './utilities/mixin.scss' as *;
 
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap');
@@ -54,6 +55,36 @@ section {
   color: $first-color-alt;
   span {
     color: $first-color;
+  }
+}
+
+#empty__container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+  .empty {
+    @include flex(row, space-between, 0);
+    
+    .empty__group {
+      width: 55%;
+
+      .empty__text {
+        margin-bottom: 0.5em;
+        font-family: $title-font;
+        font-size: 1.7rem;
+      }
+  
+      .empty__desc {
+        font-size: $h3-font-size;
+  
+        a {
+          color: #5d55b3;
+          font-weight: 500;
+        }
+      }
+    }
   }
 }
 
@@ -116,6 +147,10 @@ section {
   .skip-to-content {
     width: 150px;
     height: 50px;
+  }
+
+  .empty {
+    width: 450px;
   }
 }
 

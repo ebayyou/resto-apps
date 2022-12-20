@@ -12,10 +12,19 @@
     background-color: #eee;
     border-radius: 0.6em;
 
-    .card__img {
-      margin: 0 auto;
-      border-radius: 1em;
+    .card__wraper-img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 350px;
+
+      .card__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 1em;
+      }
     }
+    
 
     .card__title {
       font-size: $h3-font-size;
@@ -58,6 +67,10 @@
 @media (min-width: 650px) {
   .list__restaurant {
     @include grid(2, 1fr, 2em);
+
+    .card__wraper-img {
+      height: 220px;
+    }
   }
 }
 

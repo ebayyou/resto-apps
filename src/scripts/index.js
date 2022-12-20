@@ -2,12 +2,10 @@
 require('./vendor');
 
 import '../styles/main.scss';
-import './components/AppBar';
 import './components/FooterElement';
+import './components/AppBar';
 // import swRegister from './utils/sw-register';
 import App from './view/app';
-
-console.log(document.querySelector('#menu-navbar'));
 
 const app = new App({
   button: document.querySelector('#menu-navbar'),

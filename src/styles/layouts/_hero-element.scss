@@ -7,7 +7,7 @@
 
   .hero__image {
     width: 100%;
-    min-height: 480px;
+    height: 100vh;
     object-fit: cover;
     background-position: center;
     background-color: green;
@@ -18,14 +18,14 @@
     top: 30px;
     right: 0;
     left: 0;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 1.2em;
     background-color: rgba($color: #000000, $alpha: 0.3);
     border-radius: 0.6rem;
 
     .hero__heading {
-      font-size: $h1-font-size;
+      font-size: 2.4rem;
       font-weight: $font-semi-bold;
       margin-bottom: 2rem;
     }
@@ -55,6 +55,7 @@
   .hero__image {
     min-width: 1000px;
   }
+
   .hero__group {
     max-width: 600px;
   }

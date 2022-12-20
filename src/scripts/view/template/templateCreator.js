@@ -4,7 +4,9 @@ import CONFIG from '../../global/config';
 
 const createRestaurantTemplate = (restaurant) => `
   <div class="card">
-    <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" class="card__img" />
+    <div class="card__wraper-img">
+      <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" class="card__img" />
+    </div>
     <h3 class="card__title">${restaurant.name}</h3>
     <p class="card__desc">${restaurant.description}</p>
 
@@ -25,86 +27,92 @@ const createRestaurantTemplate = (restaurant) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <div class="detail__wrapper">
-    <div class="detail__left">
-      <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" class="detail__img" />
-      <h3 class="detail__title">${restaurant.name}</h3>
-      <p class="detail__desc">${restaurant.description}</p>
-      <div class="detail__group">
-        <span class="star">
-          <i class="star_icon ri-star-fill"></i>
-          <i class="star_icon ri-star-fill"></i>
-          <i class="star_icon ri-star-fill"></i>
-          <i class="star_icon ri-star-fill"></i>
-          <i class="star_icon ri-star-half-line"></i>
-          <span>${restaurant.rating}</span>
-        </span>
+  <div class="detail__container">
+    <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" class="detail__img" />
 
-        <p class="detail__text">${restaurant.categories[0].name}</p>
-      </div>
+    <div class="detail__wrapper">
+      <div class="detail__restaurant">
+        <h3 class="detail__title">${restaurant.name}</h3>
+        <p class="detail__desc">${restaurant.description}</p>
+        <div class="detail__group">
+          <span class="star">
+            <i class="star_icon ri-star-fill"></i>
+            <i class="star_icon ri-star-fill"></i>
+            <i class="star_icon ri-star-fill"></i>
+            <i class="star_icon ri-star-fill"></i>
+            <i class="star_icon ri-star-half-line"></i>
+            <span>${restaurant.rating}</span>
+          </span>
 
-      <div>
-        <h4>Address :</h4>
+          <p class="detail__text">${restaurant.categories[0].name}</p>
+        </div>
 
-        <div class="detail__address">
-          <p class="">${restaurant.address}</p>
-          <p class="">${restaurant.city}</p>
+        <div>
+          <h4>Address :</h4>
+
+          <div class="detail__address">
+            <p class="">${restaurant.address}</p>
+            <p class="">${restaurant.city}</p>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <div class="detail__right">
+      
       <div class="detail__menu">
         <h4>Menu Favorites</h4>
 
-        <div class="menu__item">
-          <h5 class="menu__head">Foods</h5>
+        <div class="detail__menu-flex">
+          <div class="menu__item">
+            <h5 class="menu__head">Foods</h5>
 
-          <table class="menu__table">
-            ${restaurant.menus.foods.map(
-              (food) => `
-              <tr>
-                <td>${food.name}<td>
-                <td>${food.name}<td>
-              </tr>
-            `
-            )}
-          </table>
-        <div>
+            <table class="menu__table">
+              ${restaurant.menus.foods.map(
+                (food) => `
+                <tr>
+                  <td>${food.name}<td>
+                  <td>${food.name}<td>
+                </tr>
+              `
+              )}
+            </table>
+          </div>
 
-        <div class="menu__item">
-          <h5 class="menu__head">Drinks</h5>
+          <div class="menu__item">
+            <h5 class="menu__head">Drinks</h5>
 
-          <table class="menu__table">
-            ${restaurant.menus.drinks.map(
-              (drink) => `
-              <tr>
-                <td>${drink.name}<td>
-                <td>${drink.name}<td>
-              </tr>
-            `
-            )}
-          </table>
-        <div>
+            <table class="menu__table">
+              ${restaurant.menus.drinks.map(
+                (drink) => `
+                <tr>
+                  <td>${drink.name}<td>
+                  <td>${drink.name}<td>
+                </tr>
+              `
+              )}
+            </table>
+          </div>
+        </div>
       </div>
-
-      <div id="review__template" class="detail__review">
+      
+      <div class="detail__review">
         <h4>Review</h4>
-        ${restaurant.customerReviews.map(
-          (review) => `
-            <div class="review">
-              <h5 class="review__name">Name : ${review.name}</h5>
-              <p class="review__text">Review : ${review.review}</p>
-              <p class="review__date">Date : ${review.date}</p>
-            </div>
-          `
-        )}
+
+        <div id="review__template" class="review__template">
+          ${restaurant.customerReviews.map(
+            (review) => `
+              <div class="review">
+                <h5 class="review__name">Name : ${review.name}</h5>
+                <p class="review__text">Review : ${review.review}</p>
+                <p class="review__date">Date : ${review.date}</p>
+              </div>
+            `
+          )};
         </div>
 
-      <button id="open__button" class="review__button">
-        Add Review
-        <i class="ri-add-circle-line icon"></i>
-      </button>
+        <button id="open__button" class="review__button">
+          Add Review
+          <i class="ri-add-circle-line icon"></i>
+        </button>
+      </div>
     </div>
   </div>
 `;
