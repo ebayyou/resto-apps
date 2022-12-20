@@ -1,19 +1,18 @@
 @use '../base/variables' as *;
 @use '../utilities/mixin.scss' as *;
 
-.detail__wrapper {
+.detail__container {
   position: relative;
   width: 95%;
   min-height: 680px;
   margin: 50px auto;
 
-  .detail__left {
-    width: 90%;
+  .detail__restaurant {
     margin: 0 auto;
   }
 
   .detail__img {
-    max-width: 100%;
+    width: 100%;
     margin: 1em auto;
     border-radius: 0.5rem;
   }
@@ -55,7 +54,6 @@
   }
 
   .detail__menu {
-    width: 90%;
     margin: 2em auto;
 
     .menu__item {
@@ -84,31 +82,34 @@
   }
 
   .detail__review {
-    margin-top: 2em;
     max-height: 550px;
-    overflow-y: scroll;
 
-    .review {
-      margin: 1.2rem 0;
-      padding: 0.8em;
-      font-family: $title-font;
-      background-color: $first-color;
-      color: $title-color;
-
-      h5,
-      p {
-        margin-bottom: 0.6em;
-      }
-
-      .review__name {
-        font-size: $h3-font-size;
-      }
-      .review__date {
-        padding: 0.3em;
-        text-align: center;
-        font-family: $body-font;
-        background-color: $first-color-alt;
-        border-radius: 0.3em;
+    .review__template {
+      overflow-y: scroll;
+      max-height: 550px;
+      
+      .review {
+        margin: 1.2rem 0;
+        padding: 0.8em;
+        font-family: $title-font;
+        background-color: $first-color;
+        color: $title-color;
+  
+        h5,
+        p {
+          margin-bottom: 0.6em;
+        }
+  
+        .review__name {
+          font-size: $h3-font-size;
+        }
+        .review__date {
+          padding: 0.3em;
+          text-align: center;
+          font-family: $body-font;
+          background-color: $first-color-alt;
+          border-radius: 0.3em;
+        }
       }
     }
   }
@@ -131,27 +132,63 @@
   display: none;
 }
 
-@media (min-width: 680px) {
-  .detail__wrapper .detail__menu {
-    width: 550px;
+@media (min-width: 780px) {
+  .detail__review {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 950px) {
+  .detail__menu-flex {
+    @include flex(row, center, 2em);
+    align-items: flex-start;
   }
 }
 
 @media (min-width: 1150px) {
   .detail__wrapper {
-    @include flex(row, space-between, 0);
+    display: grid;
     align-items: flex-start;
+    margin-top: 3em;
 
-    .detail__right {
-      width: 50%;
-    }
-
-    .detail__left {
-      width: 45%;
+    .detail__restaurant {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      width: 80%;
+      margin: 0;
     }
 
     .detail__menu {
+      grid-column: 3 / 5;
+      grid-row: 1 / 4 ;
+      width: 100%;
       margin: 0;
+    }
+
+    .detail__review {
+      grid-column: 1 / 2;
+      grid-row: 2 / 4 ;
+      width: 80%;
+      margin: 0;
+    }
+
+    .detail__menu-flex {
+      display: block;
     }
   }
 }
+
+// @media (min-width: 1400px) {
+//   .detail__restaurant {
+//     grid-column: 1 / 2;
+//   }
+
+//   .detail__review {
+//     grid-column: 1 / 2;
+//   }
+  
+//   .detail__menu {
+//     grid-column: 3 / 5;
+//   }
+// }

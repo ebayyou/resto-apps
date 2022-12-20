@@ -3,6 +3,7 @@
 
 .review__page {
   @include flex(column, center, 2em);
+  margin: 10rem auto;
 
   .review__img {
     width: 95%;

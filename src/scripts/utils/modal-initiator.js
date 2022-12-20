@@ -15,6 +15,11 @@ const ModalInitiator = {
     });
 
     formAction.addEventListener('submit', (event) => {
+      if (!window.navigator.onLine) {
+        window.alert("You can't post the review, because you are offline!");
+        return;
+      }
+
       const data = {
         id: idResto,
         name: document.querySelector('#name').value,
