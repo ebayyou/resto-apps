@@ -1,4 +1,5 @@
-import heroImage from '../../public/images/hero-image_4.jpg';
+import heroImageSmall from '../../public/images/hero-image-small.jpg';
+import heroImageLarge from '../../public/images/hero-image-large.jpg';
 
 class HeroElement extends HTMLElement {
   connectedCallback() {
@@ -8,7 +9,10 @@ class HeroElement extends HTMLElement {
   render() {
     this.innerHTML = `
       <main class="hero__container">
-          <img class="hero__image" src="${heroImage}" />
+          <picture>
+            <source media="(max-width: 600px)" srcset="${heroImageSmall}">
+            <img class="hero__image" src="${heroImageLarge}" alt="hero image restaurant apps"/>
+          </picture>
 
           <div class="hero__group">
             <h2 class="hero__heading">Welcome to Restaurant apps</h2>

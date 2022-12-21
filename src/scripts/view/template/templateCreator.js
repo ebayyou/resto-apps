@@ -1,11 +1,13 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable indent */
 import CONFIG from '../../global/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createRestaurantTemplate = (restaurant) => `
   <div class="card">
     <div class="card__wraper-img">
-      <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" class="card__img" />
+      <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" class="card__img" />
     </div>
     <h3 class="card__title">${restaurant.name}</h3>
     <p class="card__desc">${restaurant.description}</p>
