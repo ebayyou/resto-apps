@@ -4,10 +4,36 @@ import CONFIG from '../../global/config';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
+const createRestaurantTemplateSkeleton = () => `
+  <div class="card">
+    <div class="card__wraper-img skeleton">
+      <img class="lazyload card__img" src="" alt="" />
+    </div>
+
+    <div class="skeleton-body skeleton">
+      <h3 class="card__title"></h3>
+    </div>
+    <div class="skeleton-body skeleton">
+      <p class="card__desc"></p>
+    </div>
+    <div class="skeleton-body skeleton"></div>
+    <div class="skeleton-body skeleton"></div>
+
+    <div class="card__group">
+      <span class="skeleton-body skeleton"></span>
+
+      <div class="skeleton-body skeleton">
+        <p class="card__city"></p>
+      </div>
+    </div>
+    <a href="#" class="card__button-skeleton skeleton"></a>
+  </div>
+`;
+
 const createRestaurantTemplate = (restaurant) => `
   <div class="card">
     <div class="card__wraper-img">
-      <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" class="card__img" />
+      <img class="lazyload card__img" src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" />
     </div>
     <h3 class="card__title">${restaurant.name}</h3>
     <p class="card__desc">${restaurant.description}</p>
@@ -171,4 +197,4 @@ const createReviewModalTemplate = () => `
 `;
 
 // eslint-disable-next-line max-len, object-curly-newline
-export { createRestaurantTemplate, createRestaurantDetailTemplate, createNewUpdateReviewTemplate, createButtonLikeTemplate, createButtonLikedTemplate, createReviewModalTemplate };
+export { createRestaurantTemplate, createRestaurantTemplateSkeleton, createRestaurantDetailTemplate, createNewUpdateReviewTemplate, createButtonLikeTemplate, createButtonLikedTemplate, createReviewModalTemplate };

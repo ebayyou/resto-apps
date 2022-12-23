@@ -22,7 +22,7 @@ class AppBar extends HTMLElement {
             <ul>
               <li><a href="#/home">Home</a></li>
               <li><a href="#/favorites">Favorites</a></li>
-              <li><a href="https://www.linkedin.com/in/bayu-anggoro-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
+              <li><a href="https://www.linkedin.com/in/bayu-anggoro-ditya-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
               <li>
                 <button class="button" type="button">Order Now <i class="icon__button ri-arrow-right-circle-fill"></i></button>
               </li>
@@ -33,7 +33,7 @@ class AppBar extends HTMLElement {
             <ul>
               <li><a href="#/home">Home</a></li>
               <li><a href="#/favorites">Favorites</a></li>
-              <li><a href="https://www.linkedin.com/in/bayu-anggoro-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
+              <li><a href="https://www.linkedin.com/in/bayu-anggoro-ditya-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
               <li>
                 <button class="button" type="button">Order Now <i class="icon__button ri-arrow-right-circle-fill"></i></button>
               </li>

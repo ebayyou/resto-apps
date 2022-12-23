@@ -21,10 +21,14 @@ const Home = {
 
   async afterRender() {
     const loading = document.querySelector('.loading');
+    const restoContainer = document.querySelector('#restaurants');
+    // eslint-disable-next-line no-plusplus
+    // for (let i = 0; i < 20; i++) {
+    //   restoContainer.innerHTML += createRestaurantTemplateSkeleton();
+    // }
 
     try {
       const response = await restaurantDBSource.listRestaurant();
-      const restoContainer = document.querySelector('#restaurants');
 
       response.restaurants.forEach((restaurant) => {
         restoContainer.innerHTML += createRestaurantTemplate(restaurant);
