@@ -158,15 +158,15 @@ const createNewUpdateReviewTemplate = (reviews) => `
   )}
 `;
 
-const createButtonLikeTemplate = () => `
+const createLikeRestaurantButtonTemplate = () => `
   <button aria-label="like this restaurant" id="likeButton" class="like">
     <i class="ri-heart-line" aria-hidden="true"></i>
   </button>
 `;
 
-const createButtonLikedTemplate = () => `
+const createUnlikeRestaurantButtonTemplate = () => `
   <button aria-label="unlike this restaurant" id="likeButton" class="like">
-    <i class="ri-heart-fill" ria-hidden="true"></i>
+    <i class="ri-heart-fill" aria-hidden="true"></i>
   </button>
 `;
 
@@ -197,4 +197,4 @@ const createReviewModalTemplate = () => `
 `;
 
 // eslint-disable-next-line max-len, object-curly-newline
-export { createRestaurantTemplate, createRestaurantTemplateSkeleton, createRestaurantDetailTemplate, createNewUpdateReviewTemplate, createButtonLikeTemplate, createButtonLikedTemplate, createReviewModalTemplate };
+export { createRestaurantTemplate, createRestaurantTemplateSkeleton, createRestaurantDetailTemplate, createNewUpdateReviewTemplate, createLikeRestaurantButtonTemplate, createUnlikeRestaurantButtonTemplate, createReviewModalTemplate };
