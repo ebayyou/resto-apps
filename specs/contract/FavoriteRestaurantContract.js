@@ -49,8 +49,21 @@ const areActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
       { id: 1 },
       { id: 2 },
       { id: 3 },
-    ])
+    ]);
   });
+
+  it('should be able to search for restaurants', async () => {
+    favoriteRestaurant.putRestaurant({ id: 1, title: 'restaurant a' });
+    favoriteRestaurant.putRestaurant({ id: 2, title: 'restaurant b' });
+    favoriteRestaurant.putRestaurant({ id: 3, title: 'ada juga restaurant abcde' });
+    favoriteRestaurant.putRestaurant({ id: 4, title: 'bagusan ini restaurant acd' });
+
+    expect(await favoriteRestaurant.searchRestaurants('restaurant a')).toEqual([
+      { id: 1, title: 'restaurant a' },
+      { id: 3, title: 'ada juga restaurant abcde' },
+      { id: 4, title: 'bagusan ini restaurant acd' }
+    ]);
+  })
 };
 
 export { areActsAsFavoriteRestaurantModel };

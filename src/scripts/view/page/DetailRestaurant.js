@@ -4,6 +4,7 @@ import LikeButtonPresenter from '../../utils/like-button-presenter';
 import ModalInitiator from '../../utils/modal-initiator';
 import { createRestaurantDetailTemplate, createReviewModalTemplate } from '../template/templateCreator';
 import '../../components/Loading';
+import FavoriteRestaurantDb from '../../utils/favorite-restorant-idb';
 
 const DetailRestaurant = {
   async render() {
@@ -35,6 +36,7 @@ const DetailRestaurant = {
       detailContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
       LikeButtonPresenter.init({
         likeButtonContainer: document.querySelector('#like-button-container'),
+        favoriteRestaurants: FavoriteRestaurantDb,
         restaurant: {
           id: restaurant.id,
           name: restaurant.name,

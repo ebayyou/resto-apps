@@ -27,12 +27,25 @@ const FavoriteRestaurantArray = {
     favoriteRestaurant.push(restaurant);
   },
 
+  searchRestaurants(query) {
+    return this.getAllRestaurant()
+    .filter((resto) => {
+      const loweredCaseRestaurantTitle = (resto.title || '-').toLowerCase();
+      const jammedRestorantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
+
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+
+      return jammedRestorantTitle.indexOf(jammedQuery) != -1;
+    });
+  },
+
   deleteRestaurant(id) {
     favoriteRestaurant = favoriteRestaurant.filter((resto) => resto.id != id)
   },
 };
 
-describe('Favorite Restaurant contract test implementation', () => {
+describe('Favorite Restaurant array contract test implementation', () => {
   afterEach(() => favoriteRestaurant = []);
 
   areActsAsFavoriteRestaurantModel(FavoriteRestaurantArray);
