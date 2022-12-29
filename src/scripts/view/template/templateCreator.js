@@ -31,26 +31,26 @@ const createRestaurantTemplateSkeleton = () => `
 `;
 
 const createRestaurantTemplate = (restaurant) => `
-  <div class="card">
-    <div class="card__wraper-img">
-      <img class="lazyload card__img" src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}" />
+  <div id="restaurant__item" class="resto__item">
+    <div class="resto__wraper-img">
+      <img class="lazyload resto__img" src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name || '-'}" />
     </div>
-    <h3 class="card__title">${restaurant.name}</h3>
-    <p class="card__desc">${restaurant.description}</p>
+    <h3 class="resto__title">${restaurant.name || '-'}</h3>
+    <p class="resto__desc">${restaurant.description || '-'}</p>
 
-    <div class="card__group">
+    <div class="resto__group">
       <span class="star">
         <i class="star_icon ri-star-fill"></i>
         <i class="star_icon ri-star-fill"></i>
         <i class="star_icon ri-star-fill"></i>
         <i class="star_icon ri-star-fill"></i>
         <i class="star_icon ri-star-half-line"></i>
-        <span>${restaurant.rating}</span>
+        <span>${restaurant.rating || '-'}</span>
       </span>
 
-      <p class="card__city">${restaurant.city}</p>
+      <p class="resto__city">${restaurant.city || '-'}</p>
     </div>
-    <a href="/#/detail/${restaurant.id}" class="card__button">More Detail</a>
+    <a href="/#/detail/${restaurant.id}" class="resto__button">More Detail</a>
   </div>
 `;
 

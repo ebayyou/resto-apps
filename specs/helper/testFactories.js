@@ -1,4 +1,4 @@
-import FavoriteRestaurantDb from '../../src/scripts/utils/favorite-restorant-idb';
+import FavoriteRestaurantDb from '../../src/scripts/data/favorite-restorant-idb';
 import LikeButtonPresenter from '../../src/scripts/utils/like-button-presenter';
 
 const CreateLikeButtonPresenterWithRestaurant = async (restaurant) => {

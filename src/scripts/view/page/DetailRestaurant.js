@@ -1,10 +1,10 @@
 import restaurantDBSource from '../../data/restaurantdb-source';
+import FavoriteRestaurantDb from '../../data/favorite-restorant-idb';
 import urlParser from '../../routes/url-parser';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 import ModalInitiator from '../../utils/modal-initiator';
 import { createRestaurantDetailTemplate, createReviewModalTemplate } from '../template/templateCreator';
 import '../../components/Loading';
-import FavoriteRestaurantDb from '../../utils/favorite-restorant-idb';
 
 const DetailRestaurant = {
   async render() {

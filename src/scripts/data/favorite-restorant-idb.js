@@ -32,7 +32,7 @@ const FavoriteRestaurantDb = {
 
   async searchRestaurants(query) {
     return (await this.getAllRestaurant()).filter((resto) => {
-      const loweredCaseRestaurantTitle = (resto.title || '-').toLowerCase();
+      const loweredCaseRestaurantTitle = (resto.name || '-').toLowerCase();
       const jammedRestorantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
 
       const loweredCaseQuery = query.toLowerCase();

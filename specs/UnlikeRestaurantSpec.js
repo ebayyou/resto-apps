@@ -1,4 +1,4 @@
-import FavoriteRestaurantDb from '../src/scripts/utils/favorite-restorant-idb';
+import FavoriteRestaurantDb from '../src/scripts/data/favorite-restorant-idb';
 import * as TestFactories from './helper/testFactories';
 
 
