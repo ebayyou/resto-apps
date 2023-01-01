@@ -58,7 +58,7 @@
 
     .menu__item {
       .menu__head {
-        margin: 1em 0 0.2em;
+        margin: 1em 0 1em;
         padding: 0.6em;
         font-size: $h3-font-size;
         font-weight: $font-semi-bold;
@@ -72,7 +72,7 @@
       .menu__table {
         width: 100%;
 
-        td {
+        li {
           background-color: $subtitle-color;
           color: $title-color;
           padding: 1em;
@@ -89,7 +89,7 @@
       max-height: 550px;
       
       .review {
-        margin: 1.2rem 0;
+        margin: 1.2rem;
         padding: 0.8em;
         font-family: $title-font;
         background-color: $first-color;
@@ -104,6 +104,7 @@
           font-size: $h3-font-size;
         }
         .review__date {
+          margin: 1em 0 0;
           padding: 0.3em;
           text-align: center;
           font-family: $body-font;
@@ -144,6 +145,10 @@
     @include flex(row, center, 2em);
     align-items: flex-start;
   }
+
+  .detail__wrapper .menu__table {
+    width: 350px !important;
+  }
 }
 
 @media (min-width: 1150px) {
@@ -176,19 +181,9 @@
     .detail__menu-flex {
       display: block;
     }
+
+    .menu__table {
+      width: 480px !important;
+    }
   }
 }
-
-// @media (min-width: 1400px) {
-//   .detail__restaurant {
-//     grid-column: 1 / 2;
-//   }
-
-//   .detail__review {
-//     grid-column: 1 / 2;
-//   }
-  
-//   .detail__menu {
-//     grid-column: 3 / 5;
-//   }
-// }

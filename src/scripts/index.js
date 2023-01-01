@@ -2,8 +2,8 @@
 require('./vendor');
 
 import '../styles/main.scss';
-import './components/FooterElement';
 import './components/AppBar';
+import './components/FooterElement';
 // import swRegister from './utils/sw-register';
 import App from './view/app';
 
@@ -22,8 +22,8 @@ window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
-const skipToContent = document.querySelector('.skip-to-content');
-skipToContent.addEventListener('keypress', (event) => {
+document.querySelector('.skip-to-content')
+  .addEventListener('keypress', (event) => {
   if (event.keyCode === 13) {
     document.querySelector('#main-content').focus();
   }

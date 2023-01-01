@@ -92,31 +92,27 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <div class="menu__item">
             <h5 class="menu__head">Foods</h5>
 
-            <table class="menu__table">
+            <ul class="menu__table">
               ${restaurant.menus.foods.map(
                 (food) => `
-                <tr>
-                  <td>${food.name}<td>
-                  <td>${food.name}<td>
-                </tr>
-              `
-              )}
-            </table>
+                  <li>${food.name}</li>
+                `
+                ).join("")
+              }
+            </ul>
           </div>
 
           <div class="menu__item">
             <h5 class="menu__head">Drinks</h5>
 
-            <table class="menu__table">
+            <ul class="menu__table">
               ${restaurant.menus.drinks.map(
                 (drink) => `
-                <tr>
-                  <td>${drink.name}<td>
-                  <td>${drink.name}<td>
-                </tr>
-              `
-              )}
-            </table>
+                  <li>${drink.name}</li>
+                `
+                ).join("")
+              }
+            </ul>
           </div>
         </div>
       </div>
@@ -133,7 +129,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
                 <p class="review__date">Date : ${review.date}</p>
               </div>
             `
-          )};
+          ).join("")
+          }
         </div>
 
         <button id="open__button" class="review__button">
@@ -155,7 +152,8 @@ const createNewUpdateReviewTemplate = (reviews) => `
         <p class="review__date">Date : ${review.date}</p>
       </div>
     `
-  )}
+  ).join("")
+  }
 `;
 
 const createLikeRestaurantButtonTemplate = () => `

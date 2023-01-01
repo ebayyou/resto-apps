@@ -1,6 +1,6 @@
-import '../../components/HeroElement';
 import '../../components/ReviewElement';
 import '../../components/Loading';
+import '../../components/HeroElement';
 import restaurantDBSource from '../../data/restaurantdb-source';
 import { createRestaurantTemplate } from '../template/templateCreator';
 
@@ -8,13 +8,17 @@ const Home = {
   async render() {
     return `
       <hero-element></hero-element>
+
       <section id="restaurant_section">
         <h1 class="head__section">Restaurant List</h1>
         <p class="head__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur iure, repellat quod ratione possimus a.</p>
 
         <loading-loader></loading-loader>
-        <div id="restaurants" class="list__restaurant"></div>
+
+        <div id="restaurants" class="list__restaurant">
+        </div>
       </section>
+
       <review-element></review-element>
     `;
   },
