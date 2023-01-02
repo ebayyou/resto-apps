@@ -124,16 +124,16 @@ const createRestaurantDetailTemplate = (restaurant) => `
           ${restaurant.customerReviews.map(
             (review) => `
               <div class="review">
-                <h5 class="review__name">Name : ${review.name}</h5>
-                <p class="review__text">Review : ${review.review}</p>
-                <p class="review__date">Date : ${review.date}</p>
+                <h5 class="review__name">Name : <span class="name__result">${review.name}</span></h5>
+                <p class="review__text">Review : <span class="review__result">${review.review}</span></p>
+                <p class="review__date">Date : <span class="date__result">${review.date}</span></p>
               </div>
             `
           ).join("")
           }
         </div>
 
-        <button id="open__button" class="review__button">
+        <button type="button" id="open__button" class="review__button">
           Add Review
           <i class="ri-add-circle-line icon"></i>
         </button>
@@ -143,13 +143,12 @@ const createRestaurantDetailTemplate = (restaurant) => `
 `;
 
 const createNewUpdateReviewTemplate = (reviews) => `
-  <h4>Review</h4>
   ${reviews.map(
     (review) => `
       <div class="review">
-        <h5 class="review__name">Name : ${review.name}</h5>
-        <p class="review__text">Review : ${review.review}</p>
-        <p class="review__date">Date : ${review.date}</p>
+        <h5 class="review__name">Name : <span class="name__result">${review.name}</span></h5>
+        <p class="review__text">Review : <span class="review__result">${review.review}</span></p>
+        <p class="review__date">Date : <span class="date__result">${review.date}</span></p>
       </div>
     `
   ).join("")
@@ -186,7 +185,7 @@ const createReviewModalTemplate = () => `
         <textarea name="review" id="review" cols="30" rows="10" placeholder="Share detail of your own experience at his place" required></textarea>
       </div>
 
-      <button id="add__button" class="review__button">
+      <button type="submit" id="add__button" class="review__button">
         Add Review
         <i class="ri-add-circle-line icon"></i>
       </button>

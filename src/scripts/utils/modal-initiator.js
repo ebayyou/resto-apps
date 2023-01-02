@@ -46,8 +46,9 @@ const ModalInitiator = {
   async _sendReview(data, modal, reviewTemplate) {
     try {
       const postReview = await restaurantDBSource.reviewRestaurant(data);
-      // eslint-disable-next-line no-param-reassign
+      reviewTemplate.innerHTML = '';
       reviewTemplate.innerHTML += createNewUpdateReviewTemplate(postReview.customerReviews);
+      
       window.alert('Successfully added to review page');
     } catch (error) {
       window.alert(`${error} : something went wrong!!!`);
