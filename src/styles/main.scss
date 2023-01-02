@@ -10,6 +10,7 @@
 @use './components/review-modal';
 @use './components/loading';
 @use './components/search-resto';
+@use './components/favorite-notfound';
 @use './base/variables' as *;
 @use './utilities/mixin.scss' as *;
 
@@ -52,40 +53,15 @@ section {
   margin: 0 auto;
 }
 
+.invisible {
+  display: none;
+  opacity: 0;
+}
+
 .star {
   color: $first-color-alt;
   span {
     color: $first-color;
-  }
-}
-
-#empty__container {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-
-  .empty {
-    @include flex(row, space-between, 0);
-    
-    .empty__group {
-      width: 55%;
-
-      .empty__text {
-        margin-bottom: 0.5em;
-        font-family: $title-font;
-        font-size: 1.7rem;
-      }
-  
-      .empty__desc {
-        font-size: $h3-font-size;
-  
-        a {
-          color: #5d55b3;
-          font-weight: 500;
-        }
-      }
-    }
   }
 }
 

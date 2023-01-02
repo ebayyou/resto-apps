@@ -2,7 +2,7 @@ import '../../components/ReviewElement';
 import '../../components/Loading';
 import '../../components/HeroElement';
 import restaurantDBSource from '../../data/restaurantdb-source';
-import { createRestaurantTemplate } from '../template/templateCreator';
+import { createRestaurantTemplate, createRestaurantTemplateSkeleton } from '../template/templateCreator';
 
 const Home = {
   async render() {
@@ -26,13 +26,13 @@ const Home = {
   async afterRender() {
     const loading = document.querySelector('.loading');
     const restoContainer = document.querySelector('#restaurants');
-    // eslint-disable-next-line no-plusplus
-    // for (let i = 0; i < 20; i++) {
-    //   restoContainer.innerHTML += createRestaurantTemplateSkeleton();
-    // }
+    for (let i = 0; i < 20; i++) {
+      restoContainer.innerHTML += createRestaurantTemplateSkeleton();
+    }
 
     try {
       const response = await restaurantDBSource.listRestaurant();
+      restoContainer.innerHTML = '';
 
       response.restaurants.forEach((restaurant) => {
         restoContainer.innerHTML += createRestaurantTemplate(restaurant);

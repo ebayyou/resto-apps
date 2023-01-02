@@ -29,15 +29,15 @@ const FavoriteRestaurantArray = {
 
   searchRestaurants(query) {
     return this.getAllRestaurant()
-    .filter((resto) => {
-      const loweredCaseRestaurantTitle = (resto.title || '-').toLowerCase();
-      const jammedRestorantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
+      .filter((resto) => {
+        const loweredCaseRestaurantTitle = (resto.title || '-').toLowerCase();
+        const jammedRestorantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
 
-      const loweredCaseQuery = query.toLowerCase();
-      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+        const loweredCaseQuery = query.toLowerCase();
+        const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
 
-      return jammedRestorantTitle.indexOf(jammedQuery) != -1;
-    });
+        return jammedRestorantTitle.indexOf(jammedQuery) !== -1;
+      });
   },
 
   deleteRestaurant(id) {

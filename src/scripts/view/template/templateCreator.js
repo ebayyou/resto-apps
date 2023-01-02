@@ -5,28 +5,28 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createRestaurantTemplateSkeleton = () => `
-  <div class="card">
-    <div class="card__wraper-img skeleton">
-      <img class="lazyload card__img" src="" alt="" />
+  <div class="resto">
+    <div class="resto__wraper-img skeleton">
+      <img class="lazyload resto__img" src="" alt="" />
     </div>
 
     <div class="skeleton-body skeleton">
-      <h3 class="card__title"></h3>
+      <h3 class="resto__title"></h3>
     </div>
     <div class="skeleton-body skeleton">
-      <p class="card__desc"></p>
+      <p class="resto__desc"></p>
     </div>
     <div class="skeleton-body skeleton"></div>
     <div class="skeleton-body skeleton"></div>
 
-    <div class="card__group">
+    <div class="resto__group">
       <span class="skeleton-body skeleton"></span>
 
       <div class="skeleton-body skeleton">
-        <p class="card__city"></p>
+        <p class="resto__city"></p>
       </div>
     </div>
-    <a href="#" class="card__button-skeleton skeleton"></a>
+    <a href="#" class="resto__button-skeleton skeleton"></a>
   </div>
 `;
 

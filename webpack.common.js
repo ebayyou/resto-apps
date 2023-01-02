@@ -2,8 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
-const ImageminMozJpeg = require('imagemin-mozjpeg');
 
 module.exports = {
   entry: {
@@ -20,11 +18,8 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
           'style-loader',
-          // Translates CSS into CommonJS
           'css-loader',
-          // Compiles Sass to CSS
           'sass-loader',
         ],
       },
@@ -48,13 +43,5 @@ module.exports = {
       ],
     }),
     new CleanWebpackPlugin(),
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminMozJpeg({
-          quality: 50,
-          progressive: true,
-        }),
-      ],
-    }),
   ],
 };

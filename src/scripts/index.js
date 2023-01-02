@@ -4,7 +4,7 @@ require('./vendor');
 import '../styles/main.scss';
 import './components/AppBar';
 import './components/FooterElement';
-// import swRegister from './utils/sw-register';
+import swRegister from './utils/sw-register';
 import App from './view/app';
 
 const app = new App({
@@ -15,7 +15,7 @@ const app = new App({
 
 window.addEventListener('load', async () => {
   app.renderPage();
-  // await swRegister();
+  await swRegister();
 });
 
 window.addEventListener('hashchange', () => {

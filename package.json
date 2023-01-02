@@ -6,9 +6,9 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist --port 9001",
     "test": "karma start",
     "e2e": "codeceptjs run",
-    "serve": "http-server dist --port 9001",
     "build-serve": "npm run build && npm run serve",
     "lint": "eslint ./src"
   },
@@ -23,11 +23,12 @@
     "codeceptjs": "^3.3.7",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "html-webpack-plugin": "^5.5.0",
-    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^4.2.0",
@@ -43,6 +44,7 @@
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
@@ -55,6 +57,7 @@
     "idb": "^7.1.1",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.9",
+    "sweetalert2": "^11.6.16",
     "workbox-precaching": "^6.5.4",
     "workbox-window": "^6.5.4"
   }
