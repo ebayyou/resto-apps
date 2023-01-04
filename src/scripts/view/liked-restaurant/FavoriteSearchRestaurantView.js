@@ -1,5 +1,4 @@
 import { createRestaurantTemplate } from "../template/templateCreator";
-import Logo from '../../../public/images/restaurant.png'
 class FavoriteSearchRestaurantView {
   getTemplate() {
     return `
@@ -53,7 +52,7 @@ class FavoriteSearchRestaurantView {
   _getEmptyRestaurantTemplate() {
     return `<div class="restaurant-item__not__found">
         <div class="empty">
-          <h2 class="empty__heading">!( <img src="${Logo}" alt="logo restaurant" /> )!</h2>
+          <h2 class="empty__heading">!( <img src="./images/restaurant.png" alt="logo restaurant" /> )!</h2>
 
           <div class="empty__group">
             <h3 class="empty__text">There is no restaurant that you like<h3>

@@ -1,6 +1,3 @@
-import heroImageSmall from '../../public/images/hero-image-small.jpg';
-import heroImageLarge from '../../public/images/hero-image-large.jpg';
-
 class HeroElement extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -10,15 +7,20 @@ class HeroElement extends HTMLElement {
     this.innerHTML = `
       <main class="hero__container">
           <picture>
-            <source media="(max-width: 600px)" srcset="${heroImageSmall}">
-            <img class="hero__image" src="${heroImageLarge}" alt="hero image restaurant apps"/>
+          <source media="(max-width: 600px)" srcset="./images/hero-image-small.webp" type="image/webp">
+            <source media="(max-width: 600px)" srcset="./images/hero-image-small.jpg" type="image/jpg">
+            <source media="(max-width: 1100px)" srcset="./images/hero-image-small.webp" type="image/webp">
+            <source media="(max-width: 1100px)" srcset="./images/hero-image-small.jpg" type="image/jpg">
+            <img class="hero__image" src="./images/hero-image.jpg" alt="hero image restaurant apps"/>
           </picture>
-
-          <div class="hero__group">
-            <h2 class="hero__heading">Welcome to Restaurant apps</h2>
-            <p class="hero__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus ipsum placeat, ab delectus culpa quae consequatur fugit quas dolores. Soluta porro architecto omnis.</p>
-            <button class="button">Order Now <i class="icon__button ri-arrow-right-circle-fill"></i></button>
-          </div>  
+          
+          <div class="hero__info">
+            <div class="hero__group">
+              <h2 class="hero__heading">Welcome to Restaurant apps</h2>
+              <p class="hero__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio voluptatibus ipsum placeat, ab delectus culpa quae consequatur fugit quas dolores. Soluta porro architecto omnis.</p>
+              <button type="button" class="button">Order Now <i class="icon__button ri-arrow-right-circle-fill"></i></button>
+            </div>  
+          </div>
 
           <div class="custom-shape-divider-bottom-1669143562">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

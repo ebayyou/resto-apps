@@ -10,7 +10,7 @@ class AppBar extends HTMLElement {
           <a tabindex="0" class="skip-to-content">Skip To Content</a>
           
           <a href="#/home" class="app__group">
-            <img src="./images/restaurant.png" alt="Logo RestoApps" class="logo__bar" />
+            <img src="./images/restaurant.png" width="34" height="34" alt="Logo RestoApps" class="logo__bar" />
             <h1 class="heading__bar">RestoApps</h1>
           </a>
           

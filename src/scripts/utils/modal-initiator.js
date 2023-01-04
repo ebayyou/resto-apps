@@ -80,7 +80,7 @@ const ModalInitiator = {
     } finally {
       modal.classList.add('invisible');
     }
-  },
+  }
 };
 
 export default ModalInitiator;

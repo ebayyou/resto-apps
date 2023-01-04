@@ -6,13 +6,16 @@ Before(({ I }) => {
   I.amOnPage('/#/favorites');
 });
 
-
 Scenario('Showing message empty liked a restaurant', async ({ I }) => {
   I.seeElement('#query');
+  I.waitForElement('.empty__text', 5);
+  I.scrollTo('.empty__text');
   I.see('There is no restaurant that you like', '.empty__text');
 });
 
 Scenario('Liking one resto', async ({ I }) => {
+  I.waitForElement('.empty__text', 5);
+  I.scrollTo('.empty__text');
   I.see('There is no restaurant that you like', '.empty__text');
   I.amOnPage('/');
 
@@ -29,10 +32,38 @@ Scenario('Liking one resto', async ({ I }) => {
   I.seeElement('.resto__item');
   const likedRestoTitle = await I.grabTextFrom('.resto__title');
 
-  assert.strictEqual(firstRestoTitle, likedRestoTitle)
+  assert.strictEqual(firstRestoTitle, likedRestoTitle);
+});
+
+Scenario('Cancel liked the restaurant',  ({ I }) => {
+  I.waitForElement('.empty__text', 5);
+  I.scrollTo('.empty__text');
+  I.see('There is no restaurant that you like', '.empty__text');
+  I.amOnPage('/');
+
+  I.seeElement('.resto__button');
+  I.click(locate('.resto__button').first());
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorites');
+  I.seeElement('.resto__item');
+  I.seeElement('.resto__button');
+  I.click('.resto__button');
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorites');
+  I.waitForElement('.empty__text', 5);
+  I.scrollTo('.empty__text');
+  I.see('There is no restaurant that you like', '.empty__text');
 });
 
 Scenario('Searching restaurants', async ({ I }) => {
+  I.waitForElement('.empty__text', 5);
+  I.scrollTo('.empty__text');
   I.see('There is no restaurant that you like', '.empty__text');
   I.amOnPage('/');
 
@@ -40,11 +71,11 @@ Scenario('Searching restaurants', async ({ I }) => {
 
   const titleResto = [];
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 1; i <= 3; i++) {
     I.click(locate('.resto__button').at(i));
     I.seeElement('#likeButton');
     I.click('#likeButton');
-    titleResto.push(await I.grabTextFrom('.resto__title'));
+    titleResto.push(await I.grabTextFrom('.detail__title'));
     I.amOnPage('/');
   }
 

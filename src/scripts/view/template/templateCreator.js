@@ -1,5 +1,3 @@
-/* eslint-disable comma-dangle */
-/* eslint-disable indent */
 import CONFIG from '../../global/config';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
@@ -7,7 +5,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 const createRestaurantTemplateSkeleton = () => `
   <div class="resto">
     <div class="resto__wraper-img skeleton">
-      <img class="lazyload resto__img" src="" alt="" />
+      <img class="resto__img" src="" alt="" />
     </div>
 
     <div class="skeleton-body skeleton">
@@ -33,7 +31,7 @@ const createRestaurantTemplateSkeleton = () => `
 const createRestaurantTemplate = (restaurant) => `
   <div id="restaurant__item" class="resto__item">
     <div class="resto__wraper-img">
-      <img class="lazyload resto__img" src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name || '-'}" />
+      <img class="lazyload resto__img" data-src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name || '-'}" />
     </div>
     <h3 class="resto__title">${restaurant.name || '-'}</h3>
     <p class="resto__desc">${restaurant.description || '-'}</p>
@@ -193,5 +191,4 @@ const createReviewModalTemplate = () => `
   </div>
 `;
 
-// eslint-disable-next-line max-len, object-curly-newline
 export { createRestaurantTemplate, createRestaurantTemplateSkeleton, createRestaurantDetailTemplate, createNewUpdateReviewTemplate, createLikeRestaurantButtonTemplate, createUnlikeRestaurantButtonTemplate, createReviewModalTemplate };

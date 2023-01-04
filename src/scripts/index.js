@@ -1,6 +1,4 @@
-/* eslint-disable import/first */
-require('./vendor');
-
+import 'regenerator-runtime'
 import '../styles/main.scss';
 import './components/AppBar';
 import './components/FooterElement';
