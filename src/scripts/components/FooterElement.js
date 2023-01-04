@@ -19,7 +19,7 @@ class FooterElement extends HTMLElement {
           <div class="foo__flex">
             <div class="foo__col1">
               <div class="foo__brand">
-                <img src="./images/restaurant.png" alt="Logo RestoApps" class="logo__foo" />
+                <img src="./images/restaurant.png" width="80" height="80" alt="Logo RestoApps" class="logo__foo" />
                 <h3 class="heading__foo">RestoApps</h3>
               </div>
 
