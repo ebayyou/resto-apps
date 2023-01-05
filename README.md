@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/ebayyou/tokopunyaku-app" target="_blank">
-      <img alt="Sneakpeek Project" src="https://i.ibb.co/cLHxP4Y/Dicoding-banner.webp" width="650" height="350" style="max-width: 100%;">
+  <a href="https://github.com/ebayyou/resto-apps" target="_blank">
+      <img alt="Sneakpeek Project" src="https://raw.githubusercontent.com/ebayyou/resto-apps/dev/src/public/images/Preview_restoapps.png" width="700" height="350" style="max-width: 100%;">
   </a>
 </p>
 
