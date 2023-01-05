@@ -5,42 +5,51 @@
   @include grid(1, 1fr, 2em);
   margin: 0 auto;
 
-  .card {
+  .resto__item {
     width: 95%;
     margin: 0 auto;
     padding: 1.4em 1em;
     background-color: #eee;
     border-radius: 0.6em;
 
-    .card__img {
-      margin: 0 auto;
-      border-radius: 1em;
-    }
+    .resto__wraper-img {
+      width: 100%;
+      max-width: 100%;
+      height: 220px;
 
-    .card__title {
+      .resto__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 1em;
+      }
+    }
+    
+
+    .resto__title {
       font-size: $h3-font-size;
       font-weight: $font-semi-bold;
       margin: 1.5em 0 1em;
     }
 
-    .card__desc {
+    .resto__desc {
       font-size: $normal-font-size;
       margin-bottom: 1em;
       max-height: 90px;
       overflow: hidden;
     }
 
-    .card__group {
+    .resto__group {
       @include flex(row, space-between, 0);
       margin: 1em 0;
 
-      .card__city {
+      .resto__city {
         font-size: $small-font-size;
         font-weight: $font-semi-bold;
       }
     }
 
-    .card__button {
+    .resto__button {
       width: 100%;
       height: 50px;
       display: block;
@@ -51,13 +60,56 @@
       background-color: $first-color-alt;
       color: $title-color;
       border-radius: 0.6em;
-    }
+    } 
+  }
+
+  // skeleton
+  .skeleton-body {
+    width: 100%;
+    height: 10px;
+    display: block;
+    margin: 0.8em 0;
+  }
+
+  .resto__item .skeleton-body:nth-child(5) {
+    width: 50%;
+  }
+
+  .resto__item .resto__group .skeleton-body:nth-child(1) {
+    width: 30%;
+  }
+
+  .resto__button-skeleton {
+    width: 100%;
+    height: 50px;
+    display: block;
+    margin: 1em 0 0;
+  }
+}
+
+// animation
+.skeleton {
+  border-radius: 0.6em;
+  animation: skeleton-loading 3s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgb(194, 191, 191);
+  } 
+
+  100% {
+    background-color: rgb(139, 139, 139);  
   }
 }
 
 @media (min-width: 650px) {
   .list__restaurant {
     @include grid(2, 1fr, 2em);
+
+    .resto__wraper-img {
+      height: 220px;
+    }
   }
 }
 

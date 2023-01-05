@@ -1,30 +1,28 @@
-import favoriteRestaurantDb from '../../utils/favorite-restorant-idb';
-import { createRestaurantTemplate } from '../template/templateCreator';
 import '../../components/Loading';
+import FavoriteSearchRestaurantView from '../liked-restaurant/FavoriteSearchRestaurantView';
+import FavoriteRestaurantShowPresenter from '../liked-restaurant/FavoriteRestaurantShowPresenter';
+import FavoriteRestaurantDb from '../../data/favorite-restorant-idb';
+import FavoriteSearchRestaurantPresenter from '../liked-restaurant/FavoriteSearchRestaurantPresenter';
+import { createRestaurantTemplateSkeleton } from '../template/templateCreator';
+
+const view = new FavoriteSearchRestaurantView();
 
 const Favorites = {
   async render() {
-    return `
-      <section>
-        <h1 class="head__section">Your Favorite Restaurant</h1>
-        <p class="head__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur iure, repellat quod ratione possimus a.</p>
-
-        <loading-loader></loading-loader>
-        <div id="restaurants" class="list__restaurant"></div>
-      </section>
-    `;
+    return view.getTemplate();
   },
 
   async afterRender() {
     const loading = document.querySelector('.loading');
+    const restoContainer = document.querySelector('#restaurants');
+    for (let i = 0; i < 20; i++) {
+      restoContainer.innerHTML += createRestaurantTemplateSkeleton();
+    }
 
     try {
-      const restaurant = await favoriteRestaurantDb.getAllRestaurant();
-      const restoContainer = document.querySelector('#restaurants');
-
-      restaurant.forEach((resto) => {
-        restoContainer.innerHTML += createRestaurantTemplate(resto);
-      });
+      new FavoriteRestaurantShowPresenter({view, favoriteRestaurants: FavoriteRestaurantDb})
+      new FavoriteSearchRestaurantPresenter({view, favoriteRestaurants: FavoriteRestaurantDb})
+      restoContainer.innerHTML = '';
     } catch (error) {
       console.log(error.message);
     } finally {

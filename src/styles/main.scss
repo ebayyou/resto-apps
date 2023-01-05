@@ -2,14 +2,17 @@
 @use './layouts/app-bar';
 @use './layouts/hero-element';
 @use './layouts/list-restaurant';
+@use './layouts/detail-restaurant';
 @use './layouts/review-page';
 @use './layouts/footer';
 @use './components/button';
 @use './components/like-button';
-@use './components/detail-restaurant';
 @use './components/review-modal';
 @use './components/loading';
+@use './components/search-resto';
+@use './components/favorite-notfound';
 @use './base/variables' as *;
+@use './utilities/mixin.scss' as *;
 
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap');
@@ -48,6 +51,11 @@ section {
 .container {
   max-width: 968px;
   margin: 0 auto;
+}
+
+.invisible {
+  display: none;
+  opacity: 0;
 }
 
 .star {
@@ -116,6 +124,10 @@ section {
   .skip-to-content {
     width: 150px;
     height: 50px;
+  }
+
+  .empty {
+    width: 450px;
   }
 }
 

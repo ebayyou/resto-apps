@@ -9,8 +9,12 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
   },
 });
 
-const favoriteRestaurantDb = {
+const FavoriteRestaurantDb = {
   async getRestaurant(id) {
+    if (!id) {
+      return
+    }
+
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
 
@@ -19,7 +23,23 @@ const favoriteRestaurantDb = {
   },
 
   async putRestaurant(restaurant) {
+    if (!restaurant.hasOwnProperty('id')) {
+      return
+    }
+
     return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
+  },
+
+  async searchRestaurants(query) {
+    return (await this.getAllRestaurant()).filter((resto) => {
+      const loweredCaseRestaurantTitle = (resto.name || '-').toLowerCase();
+      const jammedRestorantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
+
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+
+      return jammedRestorantTitle.indexOf(jammedQuery) !== -1;
+    });
   },
 
   async deleteRestaurant(id) {
@@ -27,4 +47,4 @@ const favoriteRestaurantDb = {
   },
 };
 
-export default favoriteRestaurantDb;
+export default FavoriteRestaurantDb;

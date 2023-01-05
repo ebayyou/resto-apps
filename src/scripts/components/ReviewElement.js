@@ -6,12 +6,12 @@ class ReviewElement extends HTMLElement {
   render() {
     this.innerHTML = `
       <section id="review" class="review__page">
-        <img src="./images/delicious-images.jpg" alt="" class="review__img" />
+        <img src="./images/delicious-images.jpg" alt="review delicious image" class="review__img" loading="lazy" />
 
         <div class="review__group">
           <h3 class="review__heading">Customer say about us</h3>
           <div class="review__info">
-            <img src="./images/man.png" alt="people" class="info__image" />
+            <img src="./images/man.png" width="54" height="54" alt="people" class="info__image" />
             <span>
               <p>Ebayyou Anggoro</p>
               <p>Food Connoisseur</p>

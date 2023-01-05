@@ -10,7 +10,7 @@ class AppBar extends HTMLElement {
           <a tabindex="0" class="skip-to-content">Skip To Content</a>
           
           <a href="#/home" class="app__group">
-            <img src="./images/restaurant.png" alt="Logo RestoApps" class="logo__bar" />
+            <img src="./images/restaurant.png" width="34" height="34" alt="Logo RestoApps" class="logo__bar" />
             <h1 class="heading__bar">RestoApps</h1>
           </a>
           
@@ -22,7 +22,7 @@ class AppBar extends HTMLElement {
             <ul>
               <li><a href="#/home">Home</a></li>
               <li><a href="#/favorites">Favorites</a></li>
-              <li><a href="https://www.linkedin.com/in/bayu-anggoro-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
+              <li><a href="https://www.linkedin.com/in/bayu-anggoro-ditya-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
               <li>
                 <button class="button" type="button">Order Now <i class="icon__button ri-arrow-right-circle-fill"></i></button>
               </li>
@@ -33,7 +33,7 @@ class AppBar extends HTMLElement {
             <ul>
               <li><a href="#/home">Home</a></li>
               <li><a href="#/favorites">Favorites</a></li>
-              <li><a href="https://www.linkedin.com/in/bayu-anggoro-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
+              <li><a href="https://www.linkedin.com/in/bayu-anggoro-ditya-53204b250/" target="_blank" rel="noreferrer">About US</a></li>
               <li>
                 <button class="button" type="button">Order Now <i class="icon__button ri-arrow-right-circle-fill"></i></button>
               </li>

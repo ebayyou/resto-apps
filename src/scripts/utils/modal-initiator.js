@@ -1,8 +1,6 @@
-/* eslint-disable no-alert */
-/* eslint-disable object-curly-newline */
-
 import restaurantDBSource from '../data/restaurantdb-source';
 import { createNewUpdateReviewTemplate } from '../view/template/templateCreator';
+import Swal from 'sweetalert2';
 
 const ModalInitiator = {
   init({ openButton, closeButton, formAction, modal, idResto, reviewTemplate }) {
@@ -15,6 +13,11 @@ const ModalInitiator = {
     });
 
     formAction.addEventListener('submit', (event) => {
+      if (!window.navigator.onLine) {
+        this._triggerAlert();
+        return;
+      }
+
       const data = {
         id: idResto,
         name: document.querySelector('#name').value,
@@ -24,6 +27,33 @@ const ModalInitiator = {
       this._sendReview(data, modal, reviewTemplate);
       event.preventDefault();
     });
+  },
+
+  _triggerToast(icon, message) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      },
+    });
+
+    Toast.fire({
+      icon: icon,
+      title: message,
+    });
+  },
+
+  _triggerAlert() {
+    Swal.fire(
+      'The Internet?',
+      "You can't post the review, because you are offline!",
+      'question'
+    );
   },
 
   _openModal(event, modal) {
@@ -41,15 +71,16 @@ const ModalInitiator = {
   async _sendReview(data, modal, reviewTemplate) {
     try {
       const postReview = await restaurantDBSource.reviewRestaurant(data);
-      // eslint-disable-next-line no-param-reassign
+      reviewTemplate.innerHTML = '';
       reviewTemplate.innerHTML += createNewUpdateReviewTemplate(postReview.customerReviews);
-      window.alert('Successfully added to review page');
+      
+      this._triggerToast('success', 'Successfully added to review restaurant');
     } catch (error) {
-      window.alert(`${error} : something went wrong!!!`);
+      this._triggerToast('error', 'Sorry : something went wrong!!!');
     } finally {
       modal.classList.add('invisible');
     }
-  },
+  }
 };
 
 export default ModalInitiator;

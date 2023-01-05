@@ -1,0 +1,45 @@
+@use '../base/variables' as *;
+@use '../utilities/mixin.scss' as *;
+
+.search__element {
+  @include flex();
+  margin: 4em 0;
+
+  .search__group {
+    width: 80%;
+
+    .search__heading {
+      display: block;
+      margin: 1rem;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+    }
+
+    .input__group {
+      @include flex();
+      border-radius: 0.4em;
+      border: 2px solid $first-color-alt;
+
+      .search__resto {
+        width: 100%;
+        font-size: 1rem;
+        font-family: "Lora", serif;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 0.6rem;
+      }
+
+      .icon__search {
+        padding: 0.7em;
+        background-color: $first-color-alt;
+        color: $title-color;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .search__group {
+    width: 350px !important;
+  }
+}

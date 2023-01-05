@@ -1,13 +1,9 @@
-/* eslint-disable import/first */
-require('./vendor');
-
+import 'regenerator-runtime'
 import '../styles/main.scss';
 import './components/AppBar';
 import './components/FooterElement';
-// import swRegister from './utils/sw-register';
+import swRegister from './utils/sw-register';
 import App from './view/app';
-
-console.log(document.querySelector('#menu-navbar'));
 
 const app = new App({
   button: document.querySelector('#menu-navbar'),
@@ -17,15 +13,15 @@ const app = new App({
 
 window.addEventListener('load', async () => {
   app.renderPage();
-  // await swRegister();
+  await swRegister();
 });
 
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
-const skipToContent = document.querySelector('.skip-to-content');
-skipToContent.addEventListener('keypress', (event) => {
+document.querySelector('.skip-to-content')
+  .addEventListener('keypress', (event) => {
   if (event.keyCode === 13) {
     document.querySelector('#main-content').focus();
   }
