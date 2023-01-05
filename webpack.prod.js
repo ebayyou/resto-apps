@@ -59,10 +59,6 @@ module.exports = merge(common, {
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: './sw.bundle.js',
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: "disabled",
-      generateStatsFile: true,
-      statsOptions: { source: false },
-    }),
+    new BundleAnalyzerPlugin(),
   ],
 });
