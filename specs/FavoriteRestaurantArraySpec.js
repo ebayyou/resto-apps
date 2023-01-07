@@ -1,14 +1,14 @@
-import { areActsAsFavoriteRestaurantModel } from "./contract/FavoriteRestaurantContract";
+import { areActsAsFavoriteRestaurantModel } from './contract/FavoriteRestaurantContract';
 
 let favoriteRestaurant = [];
 
 const FavoriteRestaurantArray = {
   getRestaurant(id) {
     if (!id) {
-      return
+      return;
     }
-  
-    return favoriteRestaurant.find((resto) => resto.id == id);
+
+    return favoriteRestaurant.find((resto) => resto.id === id);
   },
 
   getAllRestaurant() {
@@ -16,14 +16,14 @@ const FavoriteRestaurantArray = {
   },
 
   putRestaurant(restaurant) {
-    if(!restaurant.hasOwnProperty('id')) {
-      return
+    if (!restaurant.hasOwnProperty('id')) {
+      return;
     }
 
     if (this.getRestaurant(restaurant.id)) {
-      return
+      return;
     }
-    
+
     favoriteRestaurant.push(restaurant);
   },
 
@@ -41,7 +41,7 @@ const FavoriteRestaurantArray = {
   },
 
   deleteRestaurant(id) {
-    favoriteRestaurant = favoriteRestaurant.filter((resto) => resto.id != id);
+    favoriteRestaurant = favoriteRestaurant.filter((resto) => resto.id !== id);
   },
 };
 

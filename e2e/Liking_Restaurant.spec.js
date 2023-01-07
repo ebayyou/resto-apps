@@ -35,7 +35,7 @@ Scenario('Liking one resto', async ({ I }) => {
   assert.strictEqual(firstRestoTitle, likedRestoTitle);
 });
 
-Scenario('Cancel liked the restaurant',  ({ I }) => {
+Scenario('Cancel liked the restaurant', ({ I }) => {
   I.waitForElement('.empty__text', 5);
   I.scrollTo('.empty__text');
   I.see('There is no restaurant that you like', '.empty__text');
@@ -83,7 +83,7 @@ Scenario('Searching restaurants', async ({ I }) => {
   I.seeElement('#query');
 
   const searchQuery = titleResto[1].substring(1, 3);
-  const matchingResto = titleResto.filter(title => title.indexOf(searchQuery) !== -1);
+  const matchingResto = titleResto.filter((title) => title.indexOf(searchQuery) !== -1);
 
   I.fillField('#query', searchQuery);
   I.pressKey('Enter');

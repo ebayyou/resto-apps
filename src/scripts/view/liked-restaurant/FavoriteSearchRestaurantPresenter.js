@@ -4,13 +4,13 @@ class FavoriteSearchRestaurantPresenter {
     this._favoriteRestaurants = favoriteRestaurants;
 
     this._listenToSearchRequestByUser();
-  };
+  }
 
   _listenToSearchRequestByUser() {
     this._view.runWhenUserIsSearching((latestQuery) => {
       this._searchRestaurants(latestQuery);
     });
-  }; 
+  }
 
   async _searchRestaurants(latestQuery) {
     this._latestQuery = latestQuery.trim();
@@ -23,16 +23,15 @@ class FavoriteSearchRestaurantPresenter {
     }
 
     this._showFoundRestaurants(foundRestaurants);
-  };
+  }
 
   _showFoundRestaurants(restaurants) {
     this._view.showFavoriteRestaurant(restaurants);
-  };
+  }
 
   get latestQuery() {
     return this._latestQuery;
-  };
-};
-
+  }
+}
 
 export default FavoriteSearchRestaurantPresenter;

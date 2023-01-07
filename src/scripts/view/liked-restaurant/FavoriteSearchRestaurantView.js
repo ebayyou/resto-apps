@@ -1,4 +1,5 @@
-import { createRestaurantTemplate } from "../template/templateCreator";
+import { createRestaurantTemplate } from '../template/templateCreator';
+
 class FavoriteSearchRestaurantView {
   getTemplate() {
     return `
@@ -24,18 +25,18 @@ class FavoriteSearchRestaurantView {
         <div id="empty__container" class="container"></div>
       </section>  
     `;
-  };
+  }
 
   runWhenUserIsSearching(callback) {
     document.querySelector('#query').addEventListener('change', () => {
       callback(event.target.value);
     });
-  };
+  }
 
   showFavoriteRestaurant(restaurants = []) {
     let restoElement;
     let emptyElement;
-    
+
     if (restaurants.length) {
       emptyElement = '';
       restoElement = restaurants.reduce((carry, resto) => carry.concat(createRestaurantTemplate(resto)), '');
@@ -47,7 +48,7 @@ class FavoriteSearchRestaurantView {
     document.querySelector('#restaurants').innerHTML = restoElement;
     document.querySelector('#empty__container').innerHTML = emptyElement;
     document.querySelector('#restaurants').dispatchEvent(new Event('restaurants:updated'));
-  };
+  }
 
   _getEmptyRestaurantTemplate() {
     return `<div class="restaurant-item__not__found">
@@ -62,7 +63,7 @@ class FavoriteSearchRestaurantView {
           </div>
         </div>
       </div>`;
-  };
-};
+  }
+}
 
 export default FavoriteSearchRestaurantView;

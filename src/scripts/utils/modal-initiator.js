@@ -1,6 +1,8 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable no-param-reassign */
+import Swal from 'sweetalert2';
 import restaurantDBSource from '../data/restaurantdb-source';
 import { createNewUpdateReviewTemplate } from '../view/template/templateCreator';
-import Swal from 'sweetalert2';
 
 const ModalInitiator = {
   init({ openButton, closeButton, formAction, modal, idResto, reviewTemplate }) {
@@ -37,13 +39,13 @@ const ModalInitiator = {
       timer: 3000,
       timerProgressBar: true,
       didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
       },
     });
 
     Toast.fire({
-      icon: icon,
+      icon,
       title: message,
     });
   },
@@ -52,7 +54,7 @@ const ModalInitiator = {
     Swal.fire(
       'The Internet?',
       "You can't post the review, because you are offline!",
-      'question'
+      'question',
     );
   },
 
@@ -73,14 +75,14 @@ const ModalInitiator = {
       const postReview = await restaurantDBSource.reviewRestaurant(data);
       reviewTemplate.innerHTML = '';
       reviewTemplate.innerHTML += createNewUpdateReviewTemplate(postReview.customerReviews);
-      
+
       this._triggerToast('success', 'Successfully added to review restaurant');
     } catch (error) {
       this._triggerToast('error', 'Sorry : something went wrong!!!');
     } finally {
       modal.classList.add('invisible');
     }
-  }
+  },
 };
 
 export default ModalInitiator;

@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 Feature('Customer Review restaurant');
 
 Before(({ I }) => {
@@ -34,5 +32,5 @@ Scenario('Added a review for the restaurant', async ({ I }) => {
   I.fillField('#review', experienceReview);
   I.click('#add__button');
 
-  I.see('Successfully added to review restaurant', '.swal2-title')
+  I.see('Successfully added to review restaurant', '.swal2-title');
 });

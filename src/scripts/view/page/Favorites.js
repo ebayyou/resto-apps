@@ -20,8 +20,8 @@ const Favorites = {
     }
 
     try {
-      new FavoriteRestaurantShowPresenter({view, favoriteRestaurants: FavoriteRestaurantDb})
-      new FavoriteSearchRestaurantPresenter({view, favoriteRestaurants: FavoriteRestaurantDb})
+      new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantDb });
+      new FavoriteSearchRestaurantPresenter({ view, favoriteRestaurants: FavoriteRestaurantDb });
       restoContainer.innerHTML = '';
     } catch (error) {
       console.log(error.message);

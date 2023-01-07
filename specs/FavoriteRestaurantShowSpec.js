@@ -1,6 +1,6 @@
-import FavoriteRestaurantDb from "../src/scripts/data/favorite-restorant-idb";
-import FavoriteRestaurantShowPresenter from "../src/scripts/view/liked-restaurant/FavoriteRestaurantShowPresenter";
-import FavoriteSearchRestaurantView from "../src/scripts/view/liked-restaurant/FavoriteSearchRestaurantView";
+import FavoriteRestaurantDb from '../src/scripts/data/favorite-restorant-idb';
+import FavoriteRestaurantShowPresenter from '../src/scripts/view/liked-restaurant/FavoriteRestaurantShowPresenter';
+import FavoriteSearchRestaurantView from '../src/scripts/view/liked-restaurant/FavoriteSearchRestaurantView';
 
 describe('Showing all favorite restaurants', () => {
   let view;
@@ -20,7 +20,7 @@ describe('Showing all favorite restaurants', () => {
 
       new FavoriteRestaurantShowPresenter({
         view,
-        favoriteRestaurants
+        favoriteRestaurants,
       });
 
       expect(favoriteRestaurants.getAllRestaurant).toHaveBeenCalledTimes(1);
@@ -38,40 +38,39 @@ describe('Showing all favorite restaurants', () => {
 
       new FavoriteRestaurantShowPresenter({
         view,
-        favoriteRestaurants
+        favoriteRestaurants,
       });
     });
-  }); 
+  });
 
   describe('when favorite restaurant exist', () => {
     it('should show the restaurants', (done) => {
       document.querySelector('#restaurants').addEventListener('restaurants:updated', () => {
         expect(document.querySelectorAll('#restaurant__item').length).toEqual(2);
-        
+
         done();
       });
-
 
       const favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurantDb, false);
       favoriteRestaurants.getAllRestaurant.and.returnValues([
         {
-          id: 11, 
-          name: 'A', 
-          vote_average: 3, 
+          id: 11,
+          name: 'A',
+          vote_average: 3,
           overview: 'tempat Restorant A',
         },
         {
-          id: 22, 
-          name: 'B', 
-          vote_average: 4, 
+          id: 22,
+          name: 'B',
+          vote_average: 4,
           overview: 'tempat Restorant B',
-        }
+        },
       ]);
 
       new FavoriteRestaurantShowPresenter({
-        favoriteRestaurants, 
-        view
-      })
+        favoriteRestaurants,
+        view,
+      });
     });
   });
 });

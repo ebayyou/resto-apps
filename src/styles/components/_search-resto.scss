@@ -16,7 +16,7 @@
     }
 
     .input__group {
-      @include flex();
+      @include flex(row, center, 0);
       border-radius: 0.4em;
       border: 2px solid $first-color-alt;
 
@@ -25,12 +25,16 @@
         font-size: 1rem;
         font-family: "Lora", serif;
         border: none;
-        padding: 0.5rem;
-        border-radius: 0.6rem;
+        padding: 0.8rem;
+
+        &:focus {
+          border: 2px solid $first-color-alt;
+        }
       }
 
       .icon__search {
-        padding: 0.7em;
+        padding: 0.9em;
+        font-size: 1.2rem;
         background-color: $first-color-alt;
         color: $title-color;
       }

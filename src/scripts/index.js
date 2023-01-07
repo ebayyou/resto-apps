@@ -1,4 +1,4 @@
-import 'regenerator-runtime'
+import 'regenerator-runtime';
 import '../styles/main.scss';
 import './components/AppBar';
 import './components/FooterElement';
@@ -22,7 +22,7 @@ window.addEventListener('hashchange', () => {
 
 document.querySelector('.skip-to-content')
   .addEventListener('keypress', (event) => {
-  if (event.keyCode === 13) {
-    document.querySelector('#main-content').focus();
-  }
-});
+    if (event.keyCode === 13) {
+      document.querySelector('#main-content').focus();
+    }
+  });

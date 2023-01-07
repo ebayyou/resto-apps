@@ -1,7 +1,6 @@
 import FavoriteRestaurantDb from '../src/scripts/data/favorite-restorant-idb';
 import * as TestFactories from './helper/testFactories';
 
-
 describe('Unliking A Restaurant', () => {
   const addLikeButtonContainer = () => {
     document.body.innerHTML = '<div id="like-button-container"></div>';
@@ -43,5 +42,5 @@ describe('Unliking A Restaurant', () => {
 
     document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
     expect(await FavoriteRestaurantDb.getAllRestaurant()).toEqual([]);
-  })
+  });
 });

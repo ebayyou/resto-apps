@@ -1,5 +1,6 @@
+/* eslint-disable quotes */
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
@@ -51,7 +52,7 @@ module.exports = merge(common, {
     minimizer: [
       `...`,
       new CssMinimizerPlugin(),
-      new TerserPlugin()
+      new TerserPlugin(),
     ],
   },
   plugins: [
@@ -59,6 +60,9 @@ module.exports = merge(common, {
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: './sw.bundle.js',
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
   ],
 });

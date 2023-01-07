@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable indent */
 import CONFIG from '../../global/config';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
@@ -92,10 +94,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
             <ul class="menu__table">
               ${restaurant.menus.foods.map(
-                (food) => `
-                  <li>${food.name}</li>
-                `
-                ).join("")
+                (food) => ` <li>${food.name}</li>`,
+                ).join('')
               }
             </ul>
           </div>
@@ -105,10 +105,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
             <ul class="menu__table">
               ${restaurant.menus.drinks.map(
-                (drink) => `
-                  <li>${drink.name}</li>
-                `
-                ).join("")
+                (drink) => ` <li>${drink.name}</li>`,
+                ).join('')
               }
             </ul>
           </div>
@@ -126,8 +124,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
                 <p class="review__text">Review : <span class="review__result">${review.review}</span></p>
                 <p class="review__date">Date : <span class="date__result">${review.date}</span></p>
               </div>
-            `
-          ).join("")
+            `,
+            ).join('')
           }
         </div>
 
@@ -148,8 +146,8 @@ const createNewUpdateReviewTemplate = (reviews) => `
         <p class="review__text">Review : <span class="review__result">${review.review}</span></p>
         <p class="review__date">Date : <span class="date__result">${review.date}</span></p>
       </div>
-    `
-  ).join("")
+    `,
+  ).join('')
   }
 `;
 
@@ -191,4 +189,5 @@ const createReviewModalTemplate = () => `
   </div>
 `;
 
+// eslint-disable-next-line object-curly-newline
 export { createRestaurantTemplate, createRestaurantTemplateSkeleton, createRestaurantDetailTemplate, createNewUpdateReviewTemplate, createLikeRestaurantButtonTemplate, createUnlikeRestaurantButtonTemplate, createReviewModalTemplate };
