@@ -1,4 +1,4 @@
-[![MasterHead](https://i.ibb.co/Yh4v4df/thumb-resto.png)](https://www.linkedin.com/in/bayu-anggoro-53204b250/)
+[![MasterHead](https://i.ibb.co/Y2d1hD2/thumb-restoe.png)](https://www.linkedin.com/in/bayu-anggoro-53204b250/)
 
 <p align="center">
   Project Final Submission Dicoding - Expert Front-end Web Development
