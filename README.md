@@ -1,4 +1,4 @@
-[![MasterHead](https://i.ibb.co/Y2d1hD2/thumb-restoe.png)](https://www.linkedin.com/in/bayu-anggoro-53204b250/)
+[![MasterHead](https://raw.githubusercontent.com/ebayyou/resto-apps/main/src/public/images/thumb__restoe.png)](https://www.linkedin.com/in/bayu-anggoro-53204b250/)
 
 <p align="center">
   Project Final Submission Dicoding - Expert Front-end Web Development
@@ -8,6 +8,7 @@
 
 ### Build Resto APPs v.0.1.0
 create a restaurant catalog application with HTML, CSS, Javascript technology. as well as implementing progressive web apps (pwa) techniques, single page application, web performance, automation testing, and Deployment with CI & CD.
+
 ## Dicoding Final Submission - Export FrontEnd Web Development
 
 > Learn expert and modern techniques to build websites that are optimized across devices, especially on mobile. The following is a list of what was learned :
