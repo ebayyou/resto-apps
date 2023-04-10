@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="https://github.com/ebayyou/resto-apps" target="_blank">
-      <img alt="Sneakpeek Project" src="https://raw.githubusercontent.com/ebayyou/resto-apps/dev/src/public/images/Preview_restoapps.png" width="700" height="350" style="max-width: 100%;">
-  </a>
-</p>
+[![MasterHead](https://raw.githubusercontent.com/ebayyou/resto-apps/dev/src/public/images/Preview_restoapps.png)]([https://rishavchanda.io](https://www.linkedin.com/in/bayu-anggoro-53204b250/))
 
 <p align="center">
   Project Final Submission Dicoding - Expert Front-end Web Development
@@ -24,7 +20,6 @@ create a restaurant catalog application with HTML, CSS, Javascript technology. a
 - Deployment with CI/CD
 
 For information about this course, visit [dicoding.com](https://www.dicoding.com/academies/219).
-
 
 ```js
 "devDependencies": {
@@ -65,7 +60,7 @@ For information about this course, visit [dicoding.com](https://www.dicoding.com
 },
 
 script: {
-  npm install: "npm install @babel/core @babel/preset-env babel-loader codeceptjs clean-webpack-plugin copy-webpack-plugin css-loader eslint eslint-config-airbnb-base eslint-plugin-codeceptjs eslint-plugin-import eslint-plugin-jasmine html-webpack-plugin jasmine-ajax jasmine-core karma karma-chrome-launcher karma-firefox-launcher karma-jasmine karma-sourcemap-loader karma-webpack puppeteer style-loader webpack webpack-bundle-analyzer webpack-cli webpack-dev-server webpack-merge whatwg-fetch workbox-webpack-plugin --save-dev",
+  npm install: "npm install @babel/core @babel/preset-env babel-loader codeceptjs clean-webpack-plugin copy-webpack-plugin css-loader eslint eslint-config-airbnb-     base eslint-plugin-codeceptjs eslint-plugin-import eslint-plugin-jasmine html-webpack-plugin jasmine-ajax jasmine-core karma karma-chrome-launcher karma-firefox-   launcher karma-jasmine karma-sourcemap-loader karma-webpack puppeteer style-loader webpack webpack-bundle-analyzer webpack-cli webpack-dev-server webpack-merge     whatwg-fetch workbox-webpack-plugin --save-dev",
 }
 
 "dependencies": {
