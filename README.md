@@ -1,4 +1,4 @@
-[![MasterHead](https://raw.githubusercontent.com/ebayyou/resto-apps/dev/src/public/images/Preview_restoapps.png)]([https://rishavchanda.io](https://www.linkedin.com/in/bayu-anggoro-53204b250/))
+[![MasterHead](https://i.ibb.co/gZRrdG7/Screenshot-1.png)]([https://rishavchanda.io](https://www.linkedin.com/in/bayu-anggoro-53204b250/))
 
 <p align="center">
   Project Final Submission Dicoding - Expert Front-end Web Development
